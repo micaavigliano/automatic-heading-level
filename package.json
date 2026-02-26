@@ -3,6 +3,15 @@
   "author": "Mica Avigliano",
   "version": "1.0.2",
   "type": "module",
+  "keywords": [
+    "react",
+    "a11y",
+    "accessibility",
+    "headings",
+    "context-api",
+    "semantic-ui",
+    "auto-headings"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
