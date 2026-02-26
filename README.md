@@ -1,6 +1,6 @@
 # automatic-heading-level
 
-A lightweight, accessible React utility that automatically manages heading levels (<h1> to <h6>) based on nesting depth using React Context.
+A lightweight, accessible React utility that automatically manages heading levels (`<h1>` to `<h6>`) based on nesting depth using React Context.
 
 ## Installation
 
