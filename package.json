@@ -5,6 +5,8 @@
   "type": "module",
   "keywords": [
     "react",
+    "typescript",
+    "reusable",
     "a11y",
     "accessibility",
     "headings",
