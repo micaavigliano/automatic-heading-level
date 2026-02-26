@@ -1,4 +1,4 @@
-import { AutoHeading, Section } from "../context/HeadingContext"
+import { AutoHeading, Section } from "../lib/HeadingContext"
 
 export const TestIsolated1 = () => {
   return (

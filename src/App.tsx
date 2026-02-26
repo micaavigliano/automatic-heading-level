@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PageHeadingRoot, Section, AutoHeading, Heading, useHeadingLevel } from './context/HeadingContext'
+import { PageHeadingRoot, Section, AutoHeading, Heading, useHeadingLevel } from './lib/HeadingContext'
 import { TestIsolated1 } from './components/TestIsolated1'
 import { DeeperIsolated } from './components/DeeperIsolated'
 

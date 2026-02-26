@@ -1,5 +1,4 @@
 import { createContext, useContext, type ReactNode, type HTMLAttributes } from "react"
-import { getSizeClass } from "../utils/helper"
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
@@ -22,7 +21,7 @@ export const PageHeadingRoot = ({ children }: { children: ReactNode }) => {
 }
 
 // 4. This is a vital component since here we are going to choose which HTML tag we want to use to create the sections of our page. Of course you can add more HTML tags to the list of types. For the POC sake, I only selected four.
-interface SectionProps extends HTMLAttributes<HTMLElement> {
+export interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode
   identifier: string
   as: string
@@ -38,7 +37,7 @@ export const Section = ({ as, children, className = "", identifier, ...props }: 
   return (
     <HeadingLevelContext.Provider value={next}>
       <Element
-        className={`pl-4 border-l-2 border-gray-200 ml-2 my-4 ${className}`}
+        className={className}
         aria-labelledby={`heading-${current}`}
         {...props}
       >
@@ -49,7 +48,7 @@ export const Section = ({ as, children, className = "", identifier, ...props }: 
 }
 
 // 5. AutoHeading Component (renders h1-h6 based on context)
-interface AutoHeadingProps extends HTMLAttributes<HTMLHeadingElement> {
+export interface AutoHeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   children: ReactNode
   id?: string
 }
@@ -61,20 +60,17 @@ export const AutoHeading = ({ children, className = "", id, ...props }: AutoHead
 
   return (
     <Tag 
-      className={`${getSizeClass(safeLevel)} ${className}`} 
+      className={className} 
       id={id}
       {...props}
     >
       {children}
-      <span className="ml-3 text-xs font-normal text-blue-800 bg-blue-50 px-2 py-1 rounded-full align-middle">
-        {`<h${safeLevel}>`}
-      </span>
     </Tag>
   )
 }
 
 // 6. Manual heading. sometimes the user needs/want to use a specific level regardless the nesting.
-interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
+export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   as?: string
   id?: string
   children: ReactNode
