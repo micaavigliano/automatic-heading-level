@@ -1,6 +1,7 @@
 {
   "name": "automatic-heading-level",
   "author": "Mica Avigliano",
+  "license": "MIT",
   "version": "1.0.4",
   "type": "module",
   "keywords": [
