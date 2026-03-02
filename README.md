@@ -55,8 +55,8 @@ const MyPage = () => (
 `Section`
   | Prop | Type | Description |
   | ------------- | ------------- | ------------- |
-  | `as` | `main`, `section`, `article`, `div` | The HTML element to render |
-  | `identifier` | `string` | Used for accessibility (`aria-labelledby`) |
+  | `as` | `main`, `section`, `article`, `footer`, `header` `div` | The HTML element to render |
+  | `identifier` | `string` | Used for accessibility (`aria-labelledby`) only available for `main`, `section`, `article`, `footer`, `header` |
   | `className` | `string` | Custom CSS classes for styling |
 
 `AutoHeading`
