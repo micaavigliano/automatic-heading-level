@@ -15,13 +15,15 @@ export const PageHeadingRoot = ({ children }: { children: ReactNode }) => {
     </HeadingLevelContext.Provider>
   )
 }
+
 export interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode
-  identifier: string
+  identifier?: string
   as: string
 }
 
 type SectionComponent = 'main' | 'section' | 'article' | 'footer' | 'header' | 'div'
+
 export const Section = ({ as, children, className = "", identifier, ...props }: SectionProps) => {
   const current = useContext(HeadingLevelContext)
   const next = Math.min(current + 1, 6)
@@ -58,6 +60,7 @@ export const AutoHeading = ({ children, className = "", id, ...props }: AutoHead
   const Tag = `h${safeLevel}` as HeadingLevel
 
   const idProp = id ? { id: `${id}-heading` } : {}
+  console.log(idProp, 'idprops')
 
   return (
     <Tag 
@@ -70,7 +73,6 @@ export const AutoHeading = ({ children, className = "", id, ...props }: AutoHead
   )
 }
 
-// 6. Manual heading. sometimes the user needs/want to use a specific level regardless the nesting.
 export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   as?: string
   id?: string

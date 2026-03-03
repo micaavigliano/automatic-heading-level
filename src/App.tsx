@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { PageHeadingRoot, Section, AutoHeading, Heading, useHeadingLevel } from './lib/HeadingContext'
+import { Section, AutoHeading, Heading, useHeadingLevel } from './lib/HeadingContext'
 import { TestIsolated1 } from './components/TestIsolated1'
 import { DeeperIsolated } from './components/DeeperIsolated'
 
@@ -25,7 +25,6 @@ export default function App() {
       className="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden p-8 min-h-screen"
       identifier="root"
     >
-      <PageHeadingRoot>
         <AutoHeading className="text-3xl font-bold mb-2" id="root">
           React Context Pattern: Auto-Headings
         </AutoHeading>
@@ -141,7 +140,10 @@ export default function App() {
             </div>
           </Section>
         </Section>
-      </PageHeadingRoot>
+        <Section as="div">
+          <Heading>work??</Heading>
+          <p>hello!!</p>
+        </Section>
     </Section>
   )
 }
