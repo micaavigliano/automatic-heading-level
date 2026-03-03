@@ -2,7 +2,7 @@ import { createContext, useContext, type ReactNode, type HTMLAttributes } from "
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
-const HeadingLevelContext = createContext<number>(1)
+const HeadingLevelContext = createContext<number>(0)
 
 export const useHeadingLevel = () => {
   return useContext(HeadingLevelContext)
@@ -60,7 +60,6 @@ export const AutoHeading = ({ children, className = "", id, ...props }: AutoHead
   const Tag = `h${safeLevel}` as HeadingLevel
 
   const idProp = id ? { id: `${id}-heading` } : {}
-  console.log(idProp, 'idprops')
 
   return (
     <Tag 
